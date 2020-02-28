@@ -1,5 +1,6 @@
 '''
-This is an extremely messy collaborative document for the AI & ML course at MPS
+This program uses single linear regression to make predictions on dependent variables
+Created by Mr Ross
 2-19-20
 '''
 
@@ -22,14 +23,14 @@ def estimate_coef(x, y):
     yintercept = mean_y - slope * mean_x
 
     #return m and b
-    return(slope, yintercept)
+    return(yintercept, slope)
 
 def plot_regression_line(x, y, b):
     #plotting the actual points as a scatter plot
     plt.scatter(x, y, color = "m", marker = "o", s = 30)
 
     #predicted response vector
-    y_pred = b[0] + b[1] + x
+    y_pred = b[0] + b[1] * x
 
     #plotting the regression plot_regression_line
     plt.plot(x, y_pred, color = "g")
